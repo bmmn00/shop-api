@@ -1,0 +1,15 @@
+# Сонголттой: Render Blueprint. Dashboard-оос гараар хийсэн бол хэрэггүй.
+services:
+  - type: web
+    name: shop-api
+    runtime: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        sync: false   # Dashboard дээр гараар оруулна
+      - key: APP_ENV
+        value: production
