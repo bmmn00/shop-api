@@ -9,7 +9,7 @@ from db import init_db, query
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("shop")
 
-app = FastAPI(title="Shop API Manlai")
+app = FastAPI(title="Shop API")
 init_db()
 
 
